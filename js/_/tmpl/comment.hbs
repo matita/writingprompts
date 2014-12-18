@@ -1,0 +1,17 @@
+<article class="story">
+	<header>
+		<h2 class="story-author">
+			<span class="h2-span">{{author}}</span>
+		</h2>
+		<span class="story-score">{{score}} points</span>
+		<span class="story-reading-time">{{readspeed body}}</span>
+	</header>
+	
+	{{{unescape body_html}}}
+
+	<footer>
+		<a href="http://reddit.com/{{id}}" target="_blank">
+			{{replies.data.children.length}} replies
+		</a>
+	</footer>
+</article>
