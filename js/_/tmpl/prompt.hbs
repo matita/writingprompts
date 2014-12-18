@@ -1,7 +1,11 @@
-<section class="prompt" data-link="{{permalink}}">
-	<div class="main">
-		<span class="prompt-title">{{{title}}}</span>
+<section class="prompt" data-link="{{permalink}}" id="prompt-{{id}}">
+	<a href="#prompt-{{id}}" class="back-to-prompts">back</a>
 
-		<div class="prompt-comments"></div>
-	</div>
+	<h3 class="prompt-title">{{{title}}}</h3>
+
+	<a href="http://reddit.com/{{permalink}}" target="_blank">
+		<time datetime="{{dateFormat .}}">
+			{{fromNow .}}
+		</time>
+	</a>
 </section>

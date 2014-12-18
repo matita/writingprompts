@@ -13,22 +13,36 @@ $(function() {
 
 
 	function onPromptClick() {
+		if ($(document.body).is('.viewing-stories'))
+			return;
+
 		var $this = $(this),
 			url = $this.attr('data-link').substr(1),
 			flow = new RedditFlow(url);
 
+		$this.addClass('selected');
+		$(document.body).addClass('viewing-stories')
+
 		flow.older(function(response) {
 			var comments = response[1].data.children.map(function(comment) {
-					return comment.data;
-				}),
-				html = comments.map(Tmpl.comment).join('');
+					var data = comment.data;
+					console.debug('data', data);
+					data.permalink = url + data.id;
+					return data;
+				});
+			console.debug('comments', comments);
+			var html = comments.map(Tmpl.story).join('');
 			
-			$this.find('.prompt-comments').html(html);
+			$('.stories').html(html);
 		});
 	}
 
 
 	$('body')
-		.on('click', '.prompt', onPromptClick);
+		.on('click', '.prompt', onPromptClick)
+		.on('click', '.back-to-prompts', function(e) {
+			console.debug($('body').removeClass('viewing-stories'));
+			e.stopPropagation();
+		});
 
 });

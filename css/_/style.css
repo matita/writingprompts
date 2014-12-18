@@ -27,6 +27,11 @@ section {
 	color: #999;
 	font-style: italic;
 	cursor: pointer;
+	transition: color .2s;
+}
+
+.prompt-title:hover {
+	color: #333;
 }
 
 div.header { 

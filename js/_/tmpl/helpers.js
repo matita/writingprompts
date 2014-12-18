@@ -4,7 +4,19 @@ Handlebars.registerHelper('unescape', function(text) {
 
 
 Handlebars.registerHelper('readspeed', function(text) {
-	var words = Math.round(text.length / 5),
+	var words = text && Math.round(text.length / 5) || 0,
 		wpm = 250;
-	return Math.ceil(words / wpm) + ' minutes';
+	return moment.duration(words / wpm, 'minutes').humanize();
 });
+
+
+Handlebars.registerHelper('fromNow', function(post) {
+	var time = post.created_utc + moment().zone();
+	return moment(time*1000).fromNow();
+})
+
+
+Handlebars.registerHelper('dateFormat', function(post) {
+	var time = post.created_utc + moment().zone();
+	return moment(time*1000).format();
+})

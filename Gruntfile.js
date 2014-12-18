@@ -3,13 +3,25 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-bower-task');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 
 	grunt.initConfig({
 		cssmin: {
 			combine: {
 				files: {
-					'css/style.min.css': ['css/_/*.css']
+					'css/style-no-pref.min.css': ['css/_/*.css']
 				}
+			}
+		},
+
+		autoprefixer: {
+			options: {
+				browsers: ['last 2 versions']
+			},
+			my_target: {
+				src: 'css/style-no-pref.min.css',
+				dest: 'css/style.min.css'
 			}
 		},
 
@@ -38,7 +50,7 @@ module.exports = function(grunt) {
 		watch: {
 			styles: {
 				files: ['css/_/*.css'],
-				tasks: ['cssmin']
+				tasks: ['cssmin', 'autoprefixer']
 			},
 			tmpls: {
 				files: ['js/_/**/*.hbs'],
