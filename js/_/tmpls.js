@@ -7,7 +7,7 @@ this["Tmpl"]["prompt"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
     + "\">\r\n	<a href=\"#prompt-"
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"back-to-prompts\">back</a>\r\n\r\n	<h3 class=\"prompt-title\">";
+    + "\" class=\"back-to-prompts\">&#8592; back to prompts</a>\r\n\r\n	<h3 class=\"prompt-title\">";
   stack1 = ((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"title","hash":{},"data":data}) : helper));
   if (stack1 != null) { buffer += stack1; }
   return buffer + "</h3>\r\n\r\n	<a href=\"http://reddit.com/"

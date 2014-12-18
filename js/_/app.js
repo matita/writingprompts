@@ -13,15 +13,16 @@ $(function() {
 
 
 	function onPromptClick() {
-		if ($(document.body).is('.viewing-stories'))
-			return;
-
 		var $this = $(this),
 			url = $this.attr('data-link').substr(1),
 			flow = new RedditFlow(url);
 
 		$this.addClass('selected');
-		$(document.body).addClass('viewing-stories')
+		$(document.body).addClass('viewing-stories');
+
+		window.location = '#';
+
+		$('.stories').text('loading stories...');
 
 		flow.older(function(response) {
 			var comments = response[1].data.children.map(function(comment) {
@@ -41,7 +42,8 @@ $(function() {
 	$('body')
 		.on('click', '.prompt', onPromptClick)
 		.on('click', '.back-to-prompts', function(e) {
-			console.debug($('body').removeClass('viewing-stories'));
+			$('body').removeClass('viewing-stories');
+			$('.prompt.selected').removeClass('selected');
 			e.stopPropagation();
 		});
 
