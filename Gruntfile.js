@@ -40,6 +40,9 @@ module.exports = function(grunt) {
 		},
 
 		uglify: {
+			options: {
+				sourceMap: true
+			},
 			my_target: {
 				files: {
 					'js/app.min.js': ['js/_/**/*.js']

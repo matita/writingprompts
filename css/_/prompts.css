@@ -2,7 +2,15 @@
 	transition: transform .2s, display 0 .2s;
 }
 
+.prompt + .prompt {
+	border-top: 1px solid #ddd;
+}
+
 .back-to-prompts {
+	display: none;
+}
+
+.read-on-reddit {
 	display: none;
 }
 
@@ -10,12 +18,15 @@
 	display: none;
 }
 
-.viewing-stories .prompt:not(.selected) {
-	transform: scale(0);
+.viewing-stories .back-to-prompts {
+	display: inline;
+}
+
+.viewing-stories .read-comments {
 	display: none;
 }
 
-.viewing-stories .back-to-prompts {
+.viewing-stories .read-on-reddit {
 	display: inline;
 }
 

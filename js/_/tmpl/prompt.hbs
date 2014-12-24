@@ -1,11 +1,9 @@
-<section class="prompt" data-link="{{permalink}}" id="prompt-{{id}}">
-	<a href="#prompt-{{id}}" class="back-to-prompts">&#8592; back to prompts</a>
+<article class="prompt" data-link="{{permalink}}" id="prompt-{{id}}">
+	<a href="?r/{{subreddit}}" class="back-to-prompts">&#8592; back to prompts</a>
 
 	<h3 class="prompt-title">{{{title}}}</h3>
 
-	<a href="http://reddit.com/{{permalink}}" target="_blank">
-		<time datetime="{{dateFormat .}}">
-			{{fromNow .}}
-		</time>
-	</a>
-</section>
+	<a href="?r/{{subreddit}}/comments/{{id}}" class="read-comments">Read stories</a>
+
+	<a href="http://reddit.com/{{id}}" class="read-on-reddit">Read on Reddit</a>
+</article>
