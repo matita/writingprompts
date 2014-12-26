@@ -1,9 +1,18 @@
 <article class="prompt" data-link="{{permalink}}" id="prompt-{{id}}">
 	<a href="?r/{{subreddit}}" class="back-to-prompts">&#8592; back to prompts</a>
 
+
 	<h3 class="prompt-title">{{{title}}}</h3>
 
-	<a href="?r/{{subreddit}}/comments/{{id}}" class="read-comments">Read stories</a>
+	<footer>
+		<a href="?r/{{subreddit}}/comments/{{id}}" class="read-comments">Read stories</a>
 
-	<a href="http://reddit.com/{{id}}" class="read-on-reddit">Read on Reddit</a>
+		<a href="{{url}}" class="read-on-reddit">Read on Reddit</a>
+		-
+		<span class="post-score">{{score}} points</span>
+		-
+		<span class="post-comments">{{num_comments}} comments</span>
+		-
+		{{fromNow .}}
+	</footer>
 </article>

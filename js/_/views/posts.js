@@ -1,18 +1,31 @@
 function Posts(path) {
-	var flow = new RedditFlow(path);
+	var $root = $('.prompts'),
+		flow = new RedditFlow(path),
+		$loader = $('<div class="loader">Loading...</div>'),
+		$more = $('<button class="more">More</button>');
 
 	$(document.body)
 		.scrollTop(0)
 		.removeClass('viewing-stories');
 
-	$('.prompts').html('Loading posts...');
+	$root.html('');
+	more();
 
-	flow.older(function(response) {
-		var posts = response.data.children.map(function(post) {
-				return post.data;
-			}),
-			html = posts.map(Tmpl.prompt).join('');
+	function more() {
+		$root.append($loader);
+		$more.remove();
 
-		$('.prompts').html(html);
-	});
+		flow.older(function(response) {
+			$loader.remove();
+
+			var posts = response.data.children.map(function(post) {
+					return post.data;
+				}),
+				html = posts.map(Tmpl.prompt).join('');
+
+			$root
+				.append(html)
+				.append($more.click(more));
+		});
+	}
 }

@@ -4,8 +4,16 @@
 			<span class="h2-span">{{author}}</span>
 		</h2>
 		<span class="story-score">{{score}} points</span>
-		<span class="story-reading-time">{{readspeed body}}</span>
+		<span class="story-reading-time">{{readspeed body}} read</span>
 	</header>
 	
 	{{{unescape body_html}}}
+
+	<footer>
+		<a href="{{url}}">
+			{{replies.data.children.length}} replies
+		</a>
+		-
+		{{fromNow .}}
+	</footer>
 </article>

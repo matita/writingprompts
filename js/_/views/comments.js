@@ -12,7 +12,7 @@ function Comments(path) {
 			comments = response[1].data.children.map(function(comment) {
 				var data = comment.data;
 				
-				data.permalink = path + '/' + data.id;
+				data.url = post.url + data.id;
 				return data;
 			});
 			

@@ -14,10 +14,10 @@ $(function() {
 	function route() {
 		var path = location.search.substr(1) || 'r/WritingPrompts';
 
-		if (path.match(/^\/?[^\/]+\/[^\/]+\/?$/))
-			Posts(path);
-		else if (path.match(/\/comments\//))
+		if (path.match(/\/comments\//))
 			Comments(path);
+		else
+			Posts(path);
 	}
 
 	$(window).on('popstate', route);
