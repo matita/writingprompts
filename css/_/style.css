@@ -6,7 +6,7 @@
 body { 
 	padding: 0; 
 	font-size: 16px; 
-	line-height: 1.5; 
+	line-height: 2; 
 	font-family: Merriweather; 
 	font-weight: 400; 
 	font-style: normal;
@@ -25,7 +25,7 @@ section {
 
 .prompt-title {
 	color: #999;
-	font-style: italic;
+	font-style: normal;
 }
 
 div.header { 
@@ -90,6 +90,15 @@ p {
 	margin-bottom: 1em; 
 }
 
+a {
+	text-decoration: none;
+	color: #077;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 article {
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -99,4 +108,12 @@ article {
 header,
 footer {
 	color: #999;
+}
+
+hr {
+	width: 60%;
+	border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #fff, #ccc, #fff);
 }

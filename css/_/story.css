@@ -13,3 +13,8 @@
 .story-reading-time {
 	float: right;
 }
+
+.md + .md:before {
+	content: '...continued';
+	color: #999;
+}
