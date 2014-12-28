@@ -27,7 +27,7 @@ this["Tmpl"]["prompt"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
     + escapeExpression(((helper = (helper = helpers.subreddit || (depth0 != null ? depth0.subreddit : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"subreddit","hash":{},"data":data}) : helper)))
     + "/comments/"
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"read-on-reddit\">Read on Reddit</a>\r\n		-\r\n		<span class=\"post-comments\">"
+    + "\" class=\"read-on-reddit external-link\">Read on Reddit</a>\r\n		-\r\n		<span class=\"post-comments\">"
     + escapeExpression(((helper = (helper = helpers.num_comments || (depth0 != null ? depth0.num_comments : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"num_comments","hash":{},"data":data}) : helper)))
     + " comments</span>\r\n		-\r\n		"
     + escapeExpression(((helpers.fromNow || (depth0 && depth0.fromNow) || helperMissing).call(depth0, depth0, {"name":"fromNow","hash":{},"data":data})))
@@ -48,7 +48,7 @@ this["Tmpl"]["story"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"m
   if (stack1 != null) { buffer += stack1; }
   return buffer + "\r\n\r\n	<footer>\r\n		<a href=\""
     + escapeExpression(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"url","hash":{},"data":data}) : helper)))
-    + "\">\r\n			"
+    + "\" class=\"external-link\">\r\n			"
     + escapeExpression(lambda(((stack1 = ((stack1 = ((stack1 = (depth0 != null ? depth0.replies : depth0)) != null ? stack1.data : stack1)) != null ? stack1.children : stack1)) != null ? stack1.length : stack1), depth0))
     + " replies\r\n		</a>\r\n		-\r\n		"
     + escapeExpression(((helpers.fromNow || (depth0 && depth0.fromNow) || helperMissing).call(depth0, depth0, {"name":"fromNow","hash":{},"data":data})))
