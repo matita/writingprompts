@@ -69,7 +69,8 @@ span.h1-span {
 	text-transform: none; 
 } 
 
-span.h2-span { 
+span.h2-span,
+h2 strong { 
 	background: #FFFAFD; 
 	position: relative; 
 	top: -.45em; 

@@ -19,6 +19,9 @@ this["Tmpl"]["prompt"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
   buffer += "</h3>\r\n	</header>\r\n\r\n\r\n	<div class=\"post-body\">\r\n		";
   stack1 = ((helpers.unescape || (depth0 && depth0.unescape) || helperMissing).call(depth0, (depth0 != null ? depth0.selftext_html : depth0), {"name":"unescape","hash":{},"data":data}));
   if (stack1 != null) { buffer += stack1; }
+  buffer += "\r\n		";
+  stack1 = ((helpers.unescape || (depth0 && depth0.unescape) || helperMissing).call(depth0, (depth0 != null ? depth0.body_html : depth0), {"name":"unescape","hash":{},"data":data}));
+  if (stack1 != null) { buffer += stack1; }
   return buffer + "\r\n	</div>\r\n\r\n	<footer>\r\n		<a href=\"?r/"
     + escapeExpression(((helper = (helper = helpers.subreddit || (depth0 != null ? depth0.subreddit : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"subreddit","hash":{},"data":data}) : helper)))
     + "/comments/"

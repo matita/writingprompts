@@ -4,6 +4,8 @@ $(function() {
 		.on('click', 'a:not(.external-link)', function() {
 			var href = $(this).attr('href').replace(/^https?:\/\/(www\.)?reddit\.com\//, '?');
 			if (!href.match(/^http/)) {
+				if (!href.match(/^\?/))
+					href = '?' + href;
 				history.pushState(null, '', href);
 				route();
 				return false;

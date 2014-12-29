@@ -32,7 +32,7 @@ function Comments(path) {
 		if (!author || comment.author == author) {
 			bodies.push(comment.body_html);
 
-			if (comment.replies.data && comment.replies.data.children)
+			if (comment.replies && comment.replies.data && comment.replies.data.children)
 				comment.replies.data.children.forEach(function(c) {
 					getBody(c.data, comment.author, bodies);
 				});
