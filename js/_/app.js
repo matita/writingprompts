@@ -10,16 +10,27 @@ $(function() {
 				route();
 				return false;
 			}
+		})
+		.on('change', '.posts-sort', function() {
+			var val = $(this).val();
 		});
 
 
 	function route() {
-		var path = location.search.substr(1) || 'r/WritingPrompts';
+		if (!location.search.substr(1))
+			history.replaceState(null, '', '?r/WritingPrompts');
+		var path = location.search.substr(1);
 
 		if (path.match(/\/comments\//))
 			Comments(path);
 		else
 			Posts(path);
+
+		
+		if (path.match(/^\/?r\/\w+(\/(hot|new|rising|controversial|top))?(\?|$)/))
+			$('.posts-sort').show();
+		else
+			$('.posts-sort').hide();
 	}
 
 	$(window).on('popstate', route);

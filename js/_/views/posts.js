@@ -1,6 +1,6 @@
 function Posts(path) {
-	var $root = $('.prompts'),
-		flow = new RedditFlow(path),
+	var flow = new RedditFlow(path),
+		$root = $('.prompts'),
 		$loader = $('<div class="loader">Loading...</div>'),
 		$more = $('<button class="more">More</button>');
 

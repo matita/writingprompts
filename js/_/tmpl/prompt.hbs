@@ -1,28 +1,28 @@
 <article class="prompt" data-link="{{permalink}}" id="prompt-{{id}}">
 	<a href="?r/{{subreddit}}" class="back-to-prompts">&#8592; back to prompts</a>
 
-	<header>
+	<header class="prompt-header">
 		<h2 class="story-author">
 			<span class="h2-span">{{author}}</span>
 		</h2>
 		<span class="story-score">{{score}} points</span>
 		<span class="story-reading-time">{{readspeed selftext}} read</span>
-		<h3 class="prompt-title">{{{title}}}</h3>
 	</header>
 
+	<h3 class="prompt-title">{{{title}}}</h3>
 
 	<div class="post-body">
 		{{{unescape selftext_html}}}
 		{{{unescape body_html}}}
 	</div>
 
-	<footer>
+	<footer class="prompt-footer">
 		<a href="?r/{{subreddit}}/comments/{{id}}" class="read-comments">Read</a>
 
 		<a href="http://reddit.com/r/{{subreddit}}/comments/{{id}}" class="read-on-reddit external-link">Read on Reddit</a>
-		-
+		&middot;
 		<span class="post-comments">{{num_comments}} comments</span>
-		-
+		&middot;
 		{{fromNow .}}
 	</footer>
 </article>
