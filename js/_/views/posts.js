@@ -23,9 +23,10 @@ function Posts(path) {
 				}),
 				html = posts.map(Tmpl.prompt).join('');
 
-			$root
-				.append(html)
-				.append($more.click(more));
+			$root.append(html);
+
+			if (flow.after())
+				$root.append($more.click(more));
 		});
 	}
 }

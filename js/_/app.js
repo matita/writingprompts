@@ -12,29 +12,59 @@ $(function() {
 			}
 		})
 		.on('change', '.posts-sort', function() {
-			var val = $(this).val();
+			var sets = settings(),
+				sort = ''+$(this).val();
+			sets.postsSort = sort;
+			settings(sets);
+
+			route();
 		});
+
+	$(window).on('popstate', route);
+
+	init();
+
+
+
+
+	function init() {
+		var sets = settings();
+
+		if (sets.postsSort)
+			$('.posts-sort').val(sets.postsSort);
+		
+		route();
+	}
 
 
 	function route() {
 		if (!location.search.substr(1))
 			history.replaceState(null, '', '?r/WritingPrompts');
-		var path = location.search.substr(1);
+		
+		var sets = settings(),
+			sort = sets.postsSort,
+			path = location.search.substr(1);
 
+		if (sort)
+			path = path.replace(/\/?r\/(\w+)(\/?(hot|new|rising|controversial|top|gilded)?)$/, '/r/$1/'+sort);
+		
 		if (path.match(/\/comments\//))
 			Comments(path);
 		else
-			Posts(path);
+			Posts(path, sort);
 
 		
 		if (path.match(/^\/?r\/\w+(\/(hot|new|rising|controversial|top))?(\?|$)/))
-			$('.posts-sort').show();
+			$('.sorting').show();
 		else
-			$('.posts-sort').hide();
+			$('.sorting').hide();
 	}
 
-	$(window).on('popstate', route);
 
-	route();
+	function settings(obj) {
+		if (!obj)
+			return JSON.parse(localStorage.getItem('r_settings') || '{}');
+		localStorage.setItem('r_settings', JSON.stringify(obj || {}));
+	}
 
 });

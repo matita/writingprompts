@@ -28,5 +28,14 @@ function RedditFlow(sub) {
 				callback(response);
 			}
 		);
+		return me;
+	}
+
+
+	me.after = function(value) {
+		if (!value)
+			return after;
+		after = value;
+		return me;
 	}
 }
