@@ -53,10 +53,7 @@ this["Tmpl"]["prompt"] = Handlebars.template({"1":function(depth0,helpers,partia
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.link_title : depth0), {"name":"if","hash":{},"fn":this.program(7, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   buffer += "\r\n	<div class=\"post-body\">\r\n		";
-  stack1 = ((helpers.unescape || (depth0 && depth0.unescape) || helperMissing).call(depth0, (depth0 != null ? depth0.selftext_html : depth0), {"name":"unescape","hash":{},"data":data}));
-  if (stack1 != null) { buffer += stack1; }
-  buffer += "\r\n		";
-  stack1 = ((helpers.unescape || (depth0 && depth0.unescape) || helperMissing).call(depth0, (depth0 != null ? depth0.body_html : depth0), {"name":"unescape","hash":{},"data":data}));
+  stack1 = ((helper = (helper = helpers.rendered_html || (depth0 != null ? depth0.rendered_html : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"rendered_html","hash":{},"data":data}) : helper));
   if (stack1 != null) { buffer += stack1; }
   return buffer + "\r\n	</div>\r\n\r\n	<footer class=\"prompt-footer\">\r\n		<a href=\"http://reddit.com/r/"
     + escapeExpression(((helper = (helper = helpers.subreddit || (depth0 != null ? depth0.subreddit : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"subreddit","hash":{},"data":data}) : helper)))
@@ -77,9 +74,9 @@ this["Tmpl"]["story"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"m
     + "</span>\r\n		</h2>\r\n		<span class=\"story-score\">"
     + escapeExpression(((helper = (helper = helpers.score || (depth0 != null ? depth0.score : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"score","hash":{},"data":data}) : helper)))
     + " points</span>\r\n		<span class=\"story-reading-time\">"
-    + escapeExpression(((helpers.readspeed || (depth0 && depth0.readspeed) || helperMissing).call(depth0, (depth0 != null ? depth0.body : depth0), {"name":"readspeed","hash":{},"data":data})))
+    + escapeExpression(((helpers.readspeed || (depth0 && depth0.readspeed) || helperMissing).call(depth0, (depth0 != null ? depth0.rendered_text : depth0), {"name":"readspeed","hash":{},"data":data})))
     + " read</span>\r\n	</header>\r\n	\r\n	";
-  stack1 = ((helpers.unescape || (depth0 && depth0.unescape) || helperMissing).call(depth0, (depth0 != null ? depth0.body_html : depth0), {"name":"unescape","hash":{},"data":data}));
+  stack1 = ((helper = (helper = helpers.rendered_html || (depth0 != null ? depth0.rendered_html : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"rendered_html","hash":{},"data":data}) : helper));
   if (stack1 != null) { buffer += stack1; }
   return buffer + "\r\n\r\n	<footer>\r\n		<a href=\""
     + escapeExpression(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"url","hash":{},"data":data}) : helper)))

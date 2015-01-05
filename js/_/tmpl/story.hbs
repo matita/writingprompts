@@ -4,10 +4,10 @@
 			<span class="h2-span">{{author}}</span>
 		</h2>
 		<span class="story-score">{{score}} points</span>
-		<span class="story-reading-time">{{readspeed body}} read</span>
+		<span class="story-reading-time">{{readspeed rendered_text}} read</span>
 	</header>
 	
-	{{{unescape body_html}}}
+	{{{rendered_html}}}
 
 	<footer>
 		<a href="{{url}}" class="external-link">

@@ -15,9 +15,15 @@ function Comments(path) {
 				var data = comment.data;
 				
 				data.url = post.url + data.id;
-				data.body_html = getBody(data);
+				//data.body_html = getBody(data);
+
+				applyPlugins(data, Read.commentPlugins);
+				data.rendered_text = $('<div>').html(data.rendered_html).text();
+
 				return data;
 			});
+
+		applyPlugins(post, Read.commentPlugins);
 			
 		var html = Tmpl.prompt(post) + 
 			comments.map(Tmpl.story).join('');

@@ -1,3 +1,14 @@
+var Read = {
+	plugins: {},
+	commentPlugins: [
+		'recursePosts',
+		'unescape',
+		'markEdits',
+		'embedImages'
+	]
+};
+
+
 $(function() {
 
 	$('body')
@@ -75,3 +86,17 @@ $(function() {
 	}
 
 });
+
+
+function plugin(name, fn) {
+	Read.plugins[name] = fn;
+}
+
+
+function applyPlugins(post, plugins) {
+	plugins.forEach(function(fnName) {
+		var fn = Read.plugins[fnName];
+		if (fn)
+			post.rendered_html = fn(post);
+	});
+}

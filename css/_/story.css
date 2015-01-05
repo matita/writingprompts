@@ -18,3 +18,9 @@
 	content: '...continued';
 	color: #999;
 }
+
+.edit-note {
+	background: rgba(0,0,0,.05);
+	padding: 1em;
+	text-align: left;
+}
