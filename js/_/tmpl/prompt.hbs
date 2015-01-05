@@ -6,10 +6,24 @@
 			<span class="h2-span">{{author}}</span>
 		</h2>
 		<span class="story-score">{{score}} points</span>
-		<span class="story-reading-time">{{readspeed selftext}} read</span>
+		<span class="story-reading-time">
+			{{#if title}}{{readspeed selftext}}{{/if}}
+			{{#if body}}{{readspeed body}}{{/if}}
+			read
+		</span>
 	</header>
 
-	<h3 class="prompt-title">{{{title}}}</h3>
+	{{#if title}}
+	<a href="?r/{{subreddit}}/comments/{{id}}">
+		<h3 class="prompt-title" title="{{{title}}}">{{{title}}}</h3>
+	</a>
+	{{/if}}
+
+	{{#if link_title}}
+	<a href="{{link_url}}{{id}}">
+		<h3 class="prompt-title" title="{{{link_title}}}">{{{link_title}}}</h3>
+	</a>
+	{{/if}}
 
 	<div class="post-body">
 		{{{unescape selftext_html}}}
@@ -17,10 +31,8 @@
 	</div>
 
 	<footer class="prompt-footer">
-		<a href="?r/{{subreddit}}/comments/{{id}}" class="read-comments">Read</a>
-
-		<a href="http://reddit.com/r/{{subreddit}}/comments/{{id}}" class="read-on-reddit external-link">Read on Reddit</a>
-		&middot;
+		<a href="http://reddit.com/r/{{subreddit}}/comments/{{id}}" class="read-on-reddit external-link just-viewing">Read on Reddit</a>
+		<span class="just-viewing">&middot;</span>
 		<span class="post-comments">{{num_comments}} comments</span>
 		&middot;
 		{{fromNow .}}

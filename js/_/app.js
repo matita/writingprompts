@@ -43,7 +43,9 @@ $(function() {
 		
 		var sets = settings(),
 			sort = sets.postsSort,
-			path = location.search.substr(1);
+			path = location.search.substr(1),
+			pathMatch = path.match(/\/?(r|u(ser)?)\/(\w+)/),
+			sub = '/' + pathMatch[1] + '/' + pathMatch[3];
 
 		if (sort)
 			path = path.replace(/\/?r\/(\w+)(\/?(hot|new|rising|controversial|top|gilded)?)$/, '/r/$1/'+sort);
@@ -53,8 +55,13 @@ $(function() {
 		else
 			Posts(path, sort);
 
+		if (sub) {
+			$('.sub-link').attr('href', '?' + sub);
+			$('.sub-title').html(sub);
+		}
+
 		
-		if (path.match(/^\/?r\/\w+(\/(hot|new|rising|controversial|top))?(\?|$)/))
+		if (path.match(/^\/?r\/\w+(\/(hot|new|rising|controversial|top|gilded))?(\?|$)/))
 			$('.sorting').show();
 		else
 			$('.sorting').hide();

@@ -11,12 +11,16 @@ body {
 	font-weight: 400; 
 	font-style: normal;
 	color: #333;
-	background: #FFFAFD; 
-} 
+	transition: background .5s;
+	background: #e8e8e8;
+}
 
-.main { 
-	margin: 0 auto; 
-	padding: 1em; 
+body.viewing-stories {
+	background: #FFFAFD; 
+}
+
+.viewing-stories .main { 
+	margin: 0 auto;  
 	max-width: 36em; 
 } 
 
@@ -42,7 +46,7 @@ h1 {
 	margin: 0; 
 	margin-bottom: 1em;
 	line-height: 1.1; 
-	text-transform: uppercase; 
+	font-variant: small-caps; 
 	text-align: center;
 } 
 
@@ -79,6 +83,9 @@ h2 strong {
 	font-family: "Open Sans"; 
 	font-weight: 800; 
 	font-style: normal; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 } 
 
 h3 { 
@@ -105,6 +112,11 @@ article {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	word-wrap: break-word;
+	text-align: left;
+	margin: 1em;
+}
+
+article .md {
 	text-align: justify;
 }
 
@@ -119,4 +131,23 @@ hr {
     height: 1px;
     background: #333;
     background-image: linear-gradient(to right, #fff, #ccc, #fff);
+}
+
+.main-header {
+	text-align: center;
+}
+
+.more {
+	width: 100%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 1em;
+}
+
+.just-viewing {
+	display: none;
+}
+
+.viewing-stories .just-viewing {
+	display: initial;
 }
