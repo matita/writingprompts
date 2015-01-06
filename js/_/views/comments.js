@@ -15,8 +15,7 @@ function Comments(path) {
 				var data = comment.data;
 				
 				data.url = post.url + data.id;
-				//data.body_html = getBody(data);
-
+				
 				applyPlugins(data, Read.commentPlugins);
 				data.rendered_text = $('<div>').html(data.rendered_html).text();
 
@@ -30,21 +29,4 @@ function Comments(path) {
 		
 		$('.prompts').html(html);
 	});
-
-
-
-	function getBody(comment, author, bodies) {
-		bodies = bodies || [];
-		if (!author || comment.author == author) {
-			bodies.push(comment.body_html);
-
-			if (comment.replies && comment.replies.data && comment.replies.data.children)
-				comment.replies.data.children.forEach(function(c) {
-					getBody(c.data, comment.author, bodies);
-				});
-		}
-
-		if (!author)
-			return bodies.join('\n');
-	}
 }

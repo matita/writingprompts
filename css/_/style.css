@@ -114,6 +114,7 @@ article {
 	word-wrap: break-word;
 	text-align: left;
 	margin: 1em;
+	position: relative;
 }
 
 article .md {
@@ -154,4 +155,20 @@ hr {
 
 figure {
 	text-align: center;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+[data-gilded]:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-top: 1em solid gold;
+	border-left: 1em solid gold;
+	border-right: 1em solid transparent;
+	border-bottom: 1em solid transparent;
 }

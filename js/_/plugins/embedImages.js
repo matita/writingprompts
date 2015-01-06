@@ -10,7 +10,7 @@ plugin('embedImages', function(post) {
 				console.debug('^ this is img');
 				$this
 					.attr('title', $this.text())
-					.html('<figure><img src="//i.imgur.com/' + m[2] + 'm.jpg"><figcaption>' + $this.text() + '</figcaption></figure>');
+					.html('<figure><img src="//i.imgur.com/' + m[2] + 'l.jpg"><figcaption>' + $this.text() + '</figcaption></figure>');
 			}
 		})
 		.end().html();

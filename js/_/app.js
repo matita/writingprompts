@@ -4,7 +4,8 @@ var Read = {
 		'recursePosts',
 		'unescape',
 		'markEdits',
-		'embedImages'
+		'embedImages',
+		'reachParent'
 	]
 };
 
@@ -13,7 +14,7 @@ $(function() {
 
 	$('body')
 		.on('click', 'a:not(.external-link)', function() {
-			var href = $(this).attr('href').replace(/^https?:\/\/(www\.)?reddit\.com\//, '?');
+			var href = $(this).attr('href').replace(/^https?:\/\/(www\.|np\.)?reddit\.com\//, '?');
 			if (!href.match(/^http/)) {
 				if (!href.match(/^\?/))
 					href = '?' + href;
