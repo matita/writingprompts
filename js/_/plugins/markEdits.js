@@ -5,7 +5,7 @@ plugin('markEdits', function(post) {
 			var $this = $(this),
 				text = $this.text();
 
-			if (text.match(/^edit(ed)?\b/i))
+			if (text.match(/^edit(ed)?(\d+)?\b/i))
 				$this.addClass('edit-note');
 		})
 		.end().html();

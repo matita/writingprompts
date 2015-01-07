@@ -117,10 +117,6 @@ article {
 	position: relative;
 }
 
-article .md {
-	text-align: justify;
-}
-
 header,
 footer {
 	color: #999;
