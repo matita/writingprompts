@@ -16,12 +16,12 @@ body {
 }
 
 body.viewing-stories {
-	background: #FFFAFD; 
+	background: #f4f4f4; 
 }
 
 .viewing-stories .main { 
 	margin: 0 auto;  
-	max-width: 36em; 
+	max-width: 44em; 
 } 
 
 section {
@@ -55,12 +55,10 @@ h2 {
 	font-weight: 400; 
 	font-style: normal; 
 	color: #27272E; 
-	text-transform: uppercase; 
-	border-top: 1px solid #ddd; 
+	text-transform: uppercase;
 	font-size: .874em; 
 	text-align: center; 
 	line-height: 1; 
-	margin-top: 1.953em; 
 } 
 
 span.h1-span { 
@@ -75,7 +73,6 @@ span.h1-span {
 
 span.h2-span,
 h2 strong { 
-	background: #FFFAFD; 
 	position: relative; 
 	top: -.45em; 
 	padding: 0 5%; 
@@ -105,7 +102,7 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+	border-bottom: 1px solid;
 }
 
 article {

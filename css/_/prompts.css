@@ -43,8 +43,8 @@
 	display: inline-block;
 	max-width: 20em;
 	height: 20em;
-	background: #FFFAFD;
-	border-bottom: 3px solid #ccc;
+	background: #fff;
+	box-shadow: 0 3px 3px rgba(0,0,0,.2);
 }
 
 .viewing-stories .prompt {
@@ -52,6 +52,8 @@
 	max-width: none;
 	height: auto;
 	border-bottom: none;
+	box-shadow: none;
+	background: none;
 }
 
 .prompt-title {
@@ -62,6 +64,7 @@
 	padding-right: 1em;
 	text-align: left;
 	font-size: 1.1em;
+	font-weight: normal;
 }
 
 .viewing-stories .prompt-title {
@@ -78,7 +81,7 @@
 	right: 0;
 	width: 40%;
 	height: 1.2em;
-	background-image: linear-gradient(to right, transparent, #FFFAFD);
+	background-image: linear-gradient(to right, transparent, #fff);
 }
 
 .viewing-stories .prompt-title:after {
