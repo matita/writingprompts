@@ -21,13 +21,33 @@
 	float: right;
 }
 
-.md + .md:before {
-	content: '...continued';
-	color: #999;
-}
-
 .edit-note {
 	background: rgba(0,0,0,.05);
 	padding: 1em;
 	text-align: left;
+	border-radius: 4px;
+}
+
+article {
+	counter-reset: chapter-counter;
+}
+
+.md {
+	text-align: justify;
+	counter-increment: chapter-counter;
+}
+
+.md:before {
+	content: 'Chapter ' counter(chapter-counter);
+	color: #999;
+	text-align: center;
+	text-transform: uppercase;
+	display: block;
+	font-family: "Open Sans"; 
+	font-weight: 800;
+	font-size: .874em;
+}
+
+.md:first-of-type:last-of-type:before {
+	display: none;
 }
